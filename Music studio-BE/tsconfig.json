@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "es2020", 
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext", 
+    
+    /* Directories */
+    "rootDir": "./src",              // Source code තියෙන folder එක
+    "outDir": "./dist",              // Compiled code යන folder එක
+
+    /* Module Resolution */
+    "esModuleInterop": true,         // CommonJS modules (like Express) import කරන්න
+    
+    /* Type Checking */
+    "strict": true,                  // සියලුම strict type-checking rules සක්‍රීය කිරීම (Assignment එකට අවශ්‍යයි)
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],           // src folder එකේ සියලුම files compile කරන්න
+  "exclude": ["node_modules"]
+}

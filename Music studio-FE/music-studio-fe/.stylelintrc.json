@@ -1,0 +1,38 @@
+{
+    "rules": {
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "tailwind",
+                    "apply",
+                    "layer",
+                    "variants",
+                    "responsive",
+                    "screen"
+                ]
+            }
+        ],
+        "property-no-vendor-prefix": null,
+        "value-no-vendor-prefix": null,
+        "at-rule-no-vendor-prefix": null,
+        "selector-no-vendor-prefix": null,
+        "media-feature-name-no-vendor-prefix": null,
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": [
+                    "appearance",
+                    "-webkit-appearance",
+                    "-moz-appearance"
+                ]
+            }
+        ],
+        "declaration-block-no-ignored-properties": null
+    },
+    "ignoreFiles": [
+        "dist/**/*.css",
+        "build/**/*.css",
+        "node_modules/**/*.css"
+    ]
+}
