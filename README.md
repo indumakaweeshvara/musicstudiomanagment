@@ -1,441 +1,329 @@
-# 🎵 Music Studio - Full Stack Web Application
+# 🎵 Music Studio - Frontend
 
-<div align="center">
+React + TypeScript frontend for the Music Studio platform.
 
-![Music Studio](https://img.shields.io/badge/MERN-Stack-green)
-![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+## 🚀 Tech Stack
 
-**A modern, AI-powered music studio management platform**
-
-[Live Demo](#) | [Backend API](#) | [Documentation](#features)
-
-</div>
-
----
-
-## 📝 Project Description
-
-Music Studio is a comprehensive full-stack web application built with the MERN stack and TypeScript. It provides a complete platform for music studios to showcase their content, manage bookings, and interact with clients. The application features a beautiful, responsive UI with modern animations, secure authentication, and AI-powered features.
-
-### 🎯 Key Highlights
-- **Full-stack TypeScript** implementation (Frontend & Backend)
-- **AI Integration** using Google Gemini for intelligent features
-- **Secure Authentication** with JWT and bcryptjs
-- **Cloud Storage** integration with Cloudinary
-- **Responsive Design** with TailwindCSS
-- **State Management** using Redux Toolkit
-- **Real-time Updates** and notifications
-
----
-
-## 🚀 Technologies Used
-
-### Frontend
-- **React 19** - Modern UI library with latest features
+- **React 19** - UI library with latest features
 - **TypeScript** - Type-safe development
-- **Redux Toolkit** - Global state management
-- **TailwindCSS** - Utility-first CSS framework
+- **Redux Toolkit** - State management
+- **TailwindCSS** - Utility-first CSS
 - **React Router** - Client-side routing
-- **Axios** - HTTP client for API calls
-- **Vite** - Fast build tool and dev server
+- **Axios** - HTTP client
+- **Vite** - Build tool and dev server
 
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **TypeScript** - Type-safe backend development
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
-- **JWT** - JSON Web Tokens for authentication
-- **bcryptjs** - Password hashing
-- **Cloudinary** - Cloud-based image/video storage
-- **Nodemailer** - Email notifications
-- **Google Gemini AI** - AI-powered features
+## 📁 Project Structure
 
-### DevOps & Deployment
-- **MongoDB Atlas** - Cloud database hosting
-- **Vercel** - Frontend deployment
-- **Render** - Backend API deployment
-- **Git & GitHub** - Version control
+```
+src/
+├── components/           # Reusable UI components
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── ...
+├── pages/               # Page components
+│   ├── Home.tsx
+│   ├── Music.tsx
+│   ├── Packages.tsx
+│   ├── Bookings.tsx
+│   ├── Contact.tsx
+│   ├── Login.tsx
+│   └── AdminDashboard.tsx
+├── routes/              # Routing configuration
+│   ├── redux/           # Redux store
+│   │   ├── store.ts
+│   │   └── slices/
+│   │       └── authSlice.ts
+│   └── ProtectedRoute.tsx
+├── services/            # API service functions
+│   ├── api.ts           # Axios instance
+│   ├── music.service.ts
+│   ├── package.service.ts
+│   ├── booking.service.ts
+│   ├── testimonial.service.ts
+│   └── contact.service.ts
+├── App.tsx              # Main app component
+├── main.tsx             # Entry point
+└── index.css            # Global styles
+```
 
----
+## ⚙️ Environment Variables
 
-## ✨ Main Features
+Create a `.env` file in the root directory:
 
-### 🎵 User Features
-1. **Music & Video Library**
-   - Browse audio and video content
-   - Search and filter functionality
-   - View count tracking
-   - Responsive media player
+```env
+# Backend API URL
+VITE_API_URL=http://localhost:5000/api
 
-2. **Service Packages**
-   - View studio service packages
-   - Detailed pricing and features
-   - Category-based filtering
+# For production (after backend deployment):
+# VITE_API_URL=https://your-backend-api.render.com/api
+```
 
-3. **Booking System**
-   - Book studio services online
-   - Select date and time
-   - Provide service requirements
-   - Email confirmation
-
-4. **Testimonials**
-   - View client testimonials
-   - Rating system (1-5 stars)
-   - Client feedback display
-
-5. **Contact Form**
-   - Send inquiries to studio
-   - Email notifications
-   - Message tracking
-
-### 🔐 Admin Features
-1. **Secure Dashboard**
-   - JWT-based authentication
-   - Role-based access control
-   - Protected admin routes
-
-2. **Content Management**
-   - Upload music/video files
-   - Edit metadata (title, artist, category)
-   - Delete content
-   - Thumbnail management
-
-3. **Package Management**
-   - Create service packages
-   - Edit pricing and features
-   - Manage package categories
-
-4. **Booking Management**
-   - View all bookings
-   - Track booking details
-   - Client information access
-
-5. **Message Management**
-   - View contact messages
-   - Client inquiry tracking
-   - Email integration
-
-6. **Analytics Overview**
-   - Total content count
-   - Booking statistics
-   - Message tracking
-   - View counts
-
-### 🤖 Advanced Features
-1. **AI Integration**
-   - Google Gemini AI for content recommendations
-   - Intelligent content categorization
-   - Smart search suggestions
-
-2. **Cloud Storage**
-   - Cloudinary integration for media files
-   - Optimized image/video delivery
-   - Automatic thumbnail generation
-
-3. **Email Notifications**
-   - Booking confirmations
-   - Contact form responses
-   - Admin notifications
-
-4. **Real-time Updates**
-   - Live view counting
-   - Instant content updates
-   - Dynamic data refresh
-
----
-
-## 🌐 Deployed URLs
-
-- **Frontend (User Interface):** `https://your-music-studio.vercel.app`
-- **Backend API:** `https://your-music-studio-api.render.com`
-- **Admin Dashboard:** `https://your-music-studio.vercel.app/admin`
-- **Database:** MongoDB Atlas (Cloud)
-
-> **Note:** Replace with your actual deployment URLs after deployment
-
----
-
-## 📦 Installation & Setup
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js v18 or higher
+- Node.js v18+ installed
 - npm or yarn package manager
-- MongoDB (local) or MongoDB Atlas account
-- Git for version control
+- Backend API running
 
-### Backend Setup
+### Installation
 
-1. **Navigate to backend directory:**
-```bash
-cd "Music studio-BE"
-```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
 ```bash
 npm install
 ```
 
-3. **Create environment file:**
+2. **Set up environment variables:**
 ```bash
 cp .env.example .env
+# Edit .env with your backend API URL
 ```
 
-4. **Configure environment variables in `.env`:**
-```env
-# Database
-MONGODB_URI=mongodb://localhost:27017/musicstudio
-# or use MongoDB Atlas connection string
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/musicstudio
-
-# Authentication
-JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_random
-
-# Server
-PORT=5000
-NODE_ENV=development
-
-# Cloudinary (Optional - for file uploads)
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-# Email (Optional - for notifications)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-
-# AI (Optional - for AI features)
-GEMINI_API_KEY=your_gemini_api_key
-```
-
-5. **Run development server:**
+3. **Run development server:**
 ```bash
 npm run dev
 ```
 
-6. **Build for production:**
+4. **Build for production:**
 ```bash
 npm run build
-npm start
 ```
 
-Backend will run on `http://localhost:5000`
-
----
-
-### Frontend Setup
-
-1. **Navigate to frontend directory:**
+5. **Preview production build:**
 ```bash
-cd "Music studio-FE/music-studio-fe"
+npm run preview
 ```
 
-2. **Install dependencies:**
-```bash
-npm install
+Application will run on `http://localhost:5173`
+
+## 🎨 Features
+
+### User Interface
+- **Home Page** - Hero section with featured content
+- **Music Library** - Browse and play audio/video content
+- **Packages** - View studio service packages
+- **Bookings** - Book studio services
+- **Contact** - Contact form
+- **Testimonials** - Client reviews
+
+### Admin Interface
+- **Dashboard** - Overview statistics
+- **Music Management** - Upload, edit, delete music
+- **Package Management** - Manage service packages
+- **Booking Management** - View all bookings
+- **Message Management** - View contact messages
+
+### UI/UX Features
+- ✨ Modern, responsive design
+- 🎨 Beautiful animations and transitions
+- 📱 Mobile-first approach
+- 🌙 Dark theme with glassmorphism
+- ⚡ Fast page loads with Vite
+- 🔄 Smooth navigation with React Router
+
+## 🔐 Authentication Flow
+
+1. **Login** - User enters credentials
+2. **Token Storage** - JWT stored in Redux state
+3. **Protected Routes** - Admin routes require authentication
+4. **Auto-redirect** - Unauthorized users redirected to login
+
+## 📦 Redux State Management
+
+### Auth Slice
+```typescript
+{
+  user: {
+    id: string;
+    name: string;
+    email: string;
+    role: 'user' | 'admin';
+  } | null;
+  token: string | null;
+  isAuthenticated: boolean;
+}
 ```
 
-3. **Create environment file:**
-```bash
-cp .env.example .env
+### Usage Example
+```typescript
+import { useSelector, useDispatch } from 'react-redux';
+import { setCredentials, logout } from './routes/redux/slices/authSlice';
+
+// Get auth state
+const { user, isAuthenticated } = useSelector((state) => state.auth);
+
+// Dispatch actions
+dispatch(setCredentials({ user, token }));
+dispatch(logout());
 ```
 
-4. **Configure environment variables in `.env`:**
-```env
-VITE_API_URL=http://localhost:5000/api
+## 🎨 TailwindCSS Configuration
+
+Custom configuration in `tailwind.config.js`:
+
+```javascript
+{
+  theme: {
+    extend: {
+      colors: {
+        // Custom color palette
+      },
+      animation: {
+        // Custom animations
+      }
+    }
+  }
+}
 ```
 
-5. **Run development server:**
-```bash
-npm run dev
+### Utility Classes Used
+- Responsive grid layouts
+- Flexbox utilities
+- Gradient backgrounds
+- Glassmorphism effects
+- Hover animations
+- Transition effects
+
+## 📡 API Integration
+
+All API calls are centralized in `services/` directory:
+
+### Example Service
+```typescript
+// music.service.ts
+import api from './api';
+
+export const fetchAllMusic = async () => {
+  const response = await api.get('/music');
+  return response.data;
+};
+
+export const uploadMusic = async (formData: FormData) => {
+  const response = await api.post('/music/upload', formData);
+  return response.data;
+};
 ```
 
-6. **Build for production:**
+### Axios Instance
+```typescript
+// api.ts
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
+
+// Add auth token to requests
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+```
+
+## 🚀 Deployment (Vercel)
+
+### Step 1: Prepare for Deployment
+
+1. Ensure build works locally:
 ```bash
 npm run build
 npm run preview
 ```
 
-Frontend will run on `http://localhost:5173`
+2. Update `.env` with production API URL
 
----
+### Step 2: Deploy to Vercel
 
-## 🗂️ Project Structure
+1. Push code to GitHub
+2. Go to [Vercel.com](https://vercel.com)
+3. Import GitHub repository
+4. Configure:
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
 
+5. Add environment variable:
+   - `VITE_API_URL` = Your backend API URL
+
+6. Deploy!
+
+### Step 3: Configure Custom Domain (Optional)
+
+1. Go to Project Settings → Domains
+2. Add your custom domain
+3. Update DNS records
+
+## 🎨 Styling Guide
+
+### Color Scheme
+- **Primary:** Purple gradient (`from-purple-600 to-pink-600`)
+- **Background:** Dark slate (`slate-950`)
+- **Accent:** Pink/Purple
+- **Text:** White/Gray
+
+### Component Patterns
+```tsx
+// Card with glassmorphism
+<div className="glass-dark p-6 rounded-2xl border border-white/10">
+  {/* Content */}
+</div>
+
+// Gradient button
+<button className="bg-gradient-to-r from-purple-600 to-pink-600 
+                   text-white px-6 py-3 rounded-xl 
+                   hover:shadow-xl transition">
+  Click Me
+</button>
+
+// Responsive grid
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {/* Items */}
+</div>
 ```
-Music Studio/
-├── Music studio-BE/              # Backend (Node.js + Express + TypeScript)
-│   ├── src/
-│   │   ├── config/               # Configuration files
-│   │   ├── controllers/          # Request handlers
-│   │   ├── middleware/           # Custom middleware (auth, upload, etc.)
-│   │   ├── models/               # Mongoose schemas
-│   │   ├── routes/               # API routes
-│   │   ├── utils/                # Utility functions
-│   │   └── index.ts              # Entry point
-│   ├── .env.example              # Environment template
-│   ├── package.json
-│   └── tsconfig.json
-│
-└── Music studio-FE/              # Frontend (React + TypeScript)
-    └── music-studio-fe/
-        ├── src/
-        │   ├── components/       # Reusable components
-        │   ├── pages/            # Page components
-        │   ├── routes/           # Routing & Redux
-        │   │   └── redux/        # Redux store & slices
-        │   ├── services/         # API service functions
-        │   └── main.tsx          # Entry point
-        ├── .env.example          # Environment template
-        ├── package.json
-        ├── tailwind.config.js    # TailwindCSS config
-        └── vite.config.ts        # Vite config
-```
-
----
-
-## 🔐 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get user profile (Protected)
-
-### Music
-- `GET /api/music` - Get all music/videos
-- `GET /api/music/search?keyword=` - Search music
-- `POST /api/music/upload` - Upload music (Admin)
-- `PUT /api/music/:id` - Update music (Admin)
-- `DELETE /api/music/:id` - Delete music (Admin)
-- `PUT /api/music/:id/view` - Increment view count
-
-### Packages
-- `GET /api/packages` - Get all packages
-- `POST /api/packages` - Create package (Admin)
-- `PUT /api/packages/:id` - Update package (Admin)
-- `DELETE /api/packages/:id` - Delete package (Admin)
-
-### Bookings
-- `GET /api/bookings` - Get all bookings (Admin)
-- `POST /api/bookings` - Create booking
-- `GET /api/bookings/:id` - Get booking by ID
-
-### Testimonials
-- `GET /api/testimonials` - Get all testimonials
-- `POST /api/testimonials` - Create testimonial (Admin)
-- `PUT /api/testimonials/:id` - Update testimonial (Admin)
-- `DELETE /api/testimonials/:id` - Delete testimonial (Admin)
-
-### Contact
-- `POST /api/contact` - Submit contact form
-- `GET /api/contact/messages` - Get all messages (Admin)
-
----
-
-## 📸 Screenshots
-
-### Home Page
-*Beautiful landing page with hero section and featured content*
-
-### Music Library
-*Browse and play music/video content with search functionality*
-
-### Service Packages
-*View studio service packages with pricing and features*
-
-### Admin Dashboard
-*Secure admin panel for content management*
-
-### Booking System
-*Easy-to-use booking interface for studio services*
-
-> **Note:** Add actual screenshots after deployment
-
----
-
-## 🚀 Deployment Guide
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
-
-### Quick Deployment Steps
-
-1. **Database:** Set up MongoDB Atlas cluster
-2. **Backend:** Deploy to Render.com
-3. **Frontend:** Deploy to Vercel.com
-4. **Configure:** Set environment variables on each platform
-5. **Test:** Verify all features work in production
-
----
 
 ## 🧪 Testing
 
-### Run Backend Tests
+### Run Tests
 ```bash
-cd "Music studio-BE"
 npm test
 ```
 
-### Run Frontend Tests
+### Test Coverage
 ```bash
-cd "Music studio-FE/music-studio-fe"
-npm test
+npm run test:coverage
 ```
 
----
+## 📱 Responsive Breakpoints
 
-## 🎓 Academic Project Information
+- **Mobile:** < 768px
+- **Tablet:** 768px - 1024px
+- **Desktop:** > 1024px
 
-This project was developed as part of the **Rapid Application Development (RAD)** module final coursework.
+All components are fully responsive using TailwindCSS breakpoints.
 
-### Learning Outcomes Demonstrated
-- Full-stack web development with MERN + TypeScript
-- RESTful API design and implementation
-- Secure authentication and authorization
-- State management with Redux
-- Responsive UI/UX design
-- Cloud deployment and DevOps
-- AI integration and advanced features
+## 🐛 Troubleshooting
 
----
+### API Connection Issues
+- Check `VITE_API_URL` in `.env`
+- Ensure backend is running
+- Check CORS settings on backend
 
-## 👨‍💻 Author
+### Build Errors
+- Clear node_modules and reinstall
+- Check TypeScript errors
+- Verify all imports
 
-**[Your Name]**
-- Email: [your.email@example.com]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-
----
+### Styling Issues
+- Rebuild TailwindCSS
+- Check class names
+- Clear browser cache
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - see LICENSE file for details
 
----
+## 👨‍💻 Author
 
-## 🙏 Acknowledgments
-
-- Module Lecturer: Mr. Shamodha Sahan
-- Course: Rapid Application Development (RAD)
-- Institution: [Your Institution Name]
-
----
-
-## 📞 Support
-
-For any queries or issues:
-- Create an issue on GitHub
-- Contact: [your.email@example.com]
-
----
-
-<div align="center">
-
-**Made with ❤️ using MERN Stack + TypeScript**
-
-⭐ Star this repo if you found it helpful!
-
-</div>
+[Your Name] - [your.email@example.com]
