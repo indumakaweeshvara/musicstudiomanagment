@@ -2,6 +2,14 @@
 
 React + TypeScript frontend for the Music Studio platform.
 
+## 🌐 Live Deployment
+
+**🚀 Live Demo:** [https://indumakaweeshvara.github.io/musicstudiomanagment/](https://indumakaweeshvara.github.io/musicstudiomanagment/)
+
+**🔗 Backend API:** [https://your-backend-url.onrender.com](https://your-backend-url.onrender.com) _(Update after deployment)_
+
+> **Note:** After deploying the backend to Render, update the `VITE_API_URL` in your deployment environment and the backend URL in this README.
+
 ## 🚀 Tech Stack
 
 - **React 19** - UI library with latest features
@@ -26,6 +34,28 @@ npm install
 ```
 
 Application will run on `http://localhost:5173`
+
+## 🚀 Deployment
+
+### Deploy to GitHub Pages
+
+1. **Install gh-pages:**
+```bash
+npm install
+```
+
+2. **Build and Deploy:**
+```bash
+npm run deploy
+```
+
+The app will be deployed to: `https://indumakaweeshvara.github.io/musicstudiomanagment/`
+
+### Environment Variables
+
+For production deployment, set the backend API URL:
+- Create `.env.production` file (gitignored)
+- Add: `VITE_API_URL=https://your-backend-url.onrender.com/api`
 
 ## 🎨 Features
 
