@@ -222,38 +222,16 @@ api.interceptors.request.use((config) => {
 });
 ```
 
-## 🚀 Deployment (Vercel)
+## 🌐 Deployed URLs
 
-### Step 1: Prepare for Deployment
+- **Frontend:** https://music-studio-frontend.vercel.app
+- **Backend API:** https://music-studio-api.onrender.com
+- **Admin Dashboard:** https://music-studio-frontend.vercel.app/admin
+- **Database:** MongoDB Atlas (Cloud)
 
-1. Ensure build works locally:
-```bash
-npm run build
-npm run preview
-```
+## 🚀 Deployment Guide
 
-2. Update `.env` with production API URL
-
-### Step 2: Deploy to Vercel
-
-1. Push code to GitHub
-2. Go to [Vercel.com](https://vercel.com)
-3. Import GitHub repository
-4. Configure:
-   - **Framework Preset:** Vite
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-
-5. Add environment variable:
-   - `VITE_API_URL` = Your backend API URL
-
-6. Deploy!
-
-### Step 3: Configure Custom Domain (Optional)
-
-1. Go to Project Settings → Domains
-2. Add your custom domain
-3. Update DNS records
+For detailed deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 
 ## 🎨 Styling Guide
 
